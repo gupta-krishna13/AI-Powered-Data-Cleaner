@@ -1,0 +1,34 @@
+# Virtual Environment
+ai_data_cleaner_env/
+
+# Environment Variables / Secrets
+.env
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# Test Cache
+.pytest_cache/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Data files
+data/raw/*
+data/processed/*
