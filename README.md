@@ -1,5 +1,4 @@
-**# AI Powered Data Cleaning**
-
+# AI Powered Data Cleaning
 An AI-assisted data cleaning application that analyzes tabular datasets,
 
 detects data-quality issues, generates cleaning recommendations, and
@@ -8,7 +7,7 @@ lets the user approve or reject those recommendations before any
 
 cleaning operation is executed.
 
-The project is designed around a **\*\*human-in-the-loop\*\*** approach: AI
+The project is designed around a **human-in-the-loop** approach: AI
 
 provides analysis and recommendations, while the actual data
 
@@ -16,10 +15,9 @@ transformation is performed by a deterministic Python cleaning engine
 
 only after user approval.
 
-**------------------------------------------------------------------------**
+---
 
-**## Overview**
-
+## Overview
 Data cleaning is often repetitive and requires decisions about how
 
 missing values, duplicate records, inconsistent categories, and outliers
@@ -28,167 +26,158 @@ should be handled.
 
 This project combines:
 
-\-   **\*\*Python and Pandas\*\*** for deterministic data processing
+-   **Python and Pandas** for deterministic data processing
 
-\-   **\*\*FastAPI\*\*** for the backend API
+-   **FastAPI** for the backend API
 
-\-   **\*\*Streamlit\*\*** for the web interface
+-   **Streamlit** for the web interface
 
-\-   **\*\*Gemini\*\*** for AI-generated cleaning recommendations
+-   **Gemini** for AI-generated cleaning recommendations
 
-\-   **\*\*Pydantic\*\*** for structured proposal validation
+-   **Pydantic** for structured proposal validation
 
-\-   **\*\*Pytest\*\*** for automated testing
+-   **Pytest** for automated testing
 
-The system separates **\*\*detection\*\***, **\*\*recommendation\*\***, **\*\*approval\*\***,
+The system separates **detection**, **recommendation**, **approval**,
 
-and **\*\*execution\*\*** so that detecting a problem never automatically means
+and **execution** so that detecting a problem never automatically means
 
 modifying the dataset.
 
-**------------------------------------------------------------------------**
+---
 
-**## Key Features**
-
-**### Dataset ingestion**
-
+## Key Features
+### Dataset ingestion
 Supports:
 
-\-   CSV files
+-   CSV files
 
-\-   Excel \`.xlsx\` files
+-   Excel `.xlsx` files
 
-\-   Excel \`.xls\` files
+-   Excel `.xls` files
 
 Uploaded files are assigned UUID-based filenames in the backend's
 
 raw-data directory.
 
-**### Dataset profiling**
-
+### Dataset profiling
 The application builds a profile containing information such as:
 
-\-   Number of rows
+-   Number of rows
 
-\-   Number of columns
+-   Number of columns
 
-\-   Column names
+-   Column names
 
-\-   Data types
+-   Data types
 
-\-   Missing values
+-   Missing values
 
-\-   Duplicate rows
+-   Duplicate rows
 
-\-   Numerical columns
+-   Numerical columns
 
-\-   Categorical columns
+-   Categorical columns
 
-**### Data-quality detection**
-
+### Data-quality detection
 The system detects:
 
-\-   Missing values
+-   Missing values
 
-\-   Duplicate rows
+-   Duplicate rows
 
-\-   Potential outliers using the IQR method
+-   Potential outliers using the IQR method
 
-\-   Inconsistent categorical values using normalized comparison
+-   Inconsistent categorical values using normalized comparison
 
 Detection only produces evidence. It does not automatically modify the
 
 dataset.
 
-**### AI cleaning recommendations**
-
+### AI cleaning recommendations
 The AI receives structured dataset and quality information and generates
 
 recommendations containing:
 
-\-   Issue type
+-   Issue type
 
-\-   Cleaning operation
+-   Cleaning operation
 
-\-   Affected columns
+-   Affected columns
 
-\-   Affected values when available
+-   Affected values when available
 
-\-   Detection method
+-   Detection method
 
-\-   Evidence
+-   Evidence
 
-\-   Interpretation
+-   Interpretation
 
-\-   Recommended action
+-   Recommended action
 
-\-   Confidence
+-   Confidence
 
-\-   Reason
+-   Reason
 
 The AI is restricted to the cleaning operations supported by the
 
 application.
 
-**### Human-in-the-loop approval**
-
+### Human-in-the-loop approval
 Every recommendation must be reviewed before execution.
 
 Depending on the recommendation, the user can:
 
-\-   Approve or reject a non-destructive recommendation
+-   Approve or reject a non-destructive recommendation
 
-\-   Keep or remove data for recommendations requiring review
+-   Keep or remove data for recommendations requiring review
 
 The backend validates that every recommendation has exactly one valid
 
 decision before creating a cleaning request.
 
-**### Deterministic cleaning engine**
-
+### Deterministic cleaning engine
 After approval, the actual cleaning is performed by the Python cleaning
 
 engine.
 
 Supported operations include:
 
-\-   Median imputation for numerical missing values
+-   Median imputation for numerical missing values
 
-\-   Mode imputation for categorical missing values
+-   Mode imputation for categorical missing values
 
-\-   Category standardization
+-   Category standardization
 
-\-   Outlier removal
+-   Outlier removal
 
-\-   Duplicate-row removal
+-   Duplicate-row removal
 
 The cleaning engine does not execute arbitrary AI-generated code or SQL.
 
-**### Cleaning audit and report**
-
+### Cleaning audit and report
 After cleaning, the application reports:
 
-\-   Rows before cleaning
+-   Rows before cleaning
 
-\-   Rows after cleaning
+-   Rows after cleaning
 
-\-   Rows removed
+-   Rows removed
 
-\-   Missing values filled
+-   Missing values filled
 
-\-   Duplicate rows removed
+-   Duplicate rows removed
 
-\-   Outliers removed
+-   Outliers removed
 
-\-   Standardized columns
+-   Standardized columns
 
 The cleaned dataset can then be downloaded from the application.
 
-**------------------------------------------------------------------------**
+---
 
-**## System Architecture**
-
-\`\`\` text
+## System Architecture
+``` text
 
                          ┌──────────────────────┐
 
@@ -284,13 +273,12 @@ The cleaned dataset can then be downloaded from the application.
 
                          └──────────────────────┘
 
-\`\`\`
+```
 
-**------------------------------------------------------------------------**
+---
 
-**## End-to-End Workflow**
-
-\`\`\` text
+## End-to-End Workflow
+``` text
 
 Upload Dataset
 
@@ -366,13 +354,12 @@ Generate Audit / Report
 
 Download Cleaned Dataset
 
-\`\`\`
+```
 
-**------------------------------------------------------------------------**
+---
 
-**## Project Structure**
-
-\`\`\` text
+## Project Structure
+``` text
 
 AI POWERED DATA CLEANING/
 
@@ -458,7 +445,7 @@ AI POWERED DATA CLEANING/
 
 │   ├── test_gemini_proposal.py
 
-│   ├── test_proposal_flow\.py
+│   ├── test_proposal_flow.py
 
 │   └── test_recommendation_v2.py
 
@@ -482,7 +469,7 @@ AI POWERED DATA CLEANING/
 
 └── test_gemini_38.py
 
-\`\`\`
+```
 
 \> The exact project tree may change as development continues. Temporary
 
@@ -490,10 +477,9 @@ AI POWERED DATA CLEANING/
 
 \> to the public repository.
 
-**------------------------------------------------------------------------**
+---
 
-**## Technology Stack**
-
+## Technology Stack
   Component                    Technology
 
 **  ---------------------------- ---------------**
@@ -520,10 +506,9 @@ AI POWERED DATA CLEANING/
 
   API Server                   Uvicorn
 
-**------------------------------------------------------------------------**
+---
 
-**## Supported Cleaning Operations**
-
+## Supported Cleaning Operations
 **  -----------------------------------------------------------------------**
 
   Operation                           Purpose
@@ -554,15 +539,14 @@ The application validates the requested operation and its column
 
 compatibility before execution.
 
-**------------------------------------------------------------------------**
+---
 
-**## AI Recommendation Design**
-
+## AI Recommendation Design
 The AI does not directly clean the uploaded dataset.
 
 Instead, the system follows:
 
-\`\`\` text
+``` text
 
 Dataset
 
@@ -594,7 +578,7 @@ Cleaning Request
 
 Deterministic Cleaning
 
-\`\`\`
+```
 
 This separation provides an important safety boundary between
 
@@ -606,109 +590,97 @@ against the application's proposal schema before it can participate in
 
 the approval workflow.
 
-**------------------------------------------------------------------------**
+---
 
-**## Gemini Integration**
-
+## Gemini Integration
 The project supports Gemini as the AI recommendation provider.
 
 The application can use:
 
-\-   A primary Gemini model
+-   A primary Gemini model
 
-\-   A configured fallback Gemini model
+-   A configured fallback Gemini model
 
 The integration includes handling for:
 
-\-   Structured JSON responses
+-   Structured JSON responses
 
-\-   Proposal validation
+-   Proposal validation
 
-\-   Server-side retry behavior
+-   Server-side retry behavior
 
-\-   Primary-model quota/server failures
+-   Primary-model quota/server failures
 
-\-   Fallback-model execution
+-   Fallback-model execution
 
 API credentials are loaded through environment variables and should
 
 never be hard-coded into the source code.
 
-**------------------------------------------------------------------------**
+---
 
-**## API Workflow**
-
+## API Workflow
 The backend exposes the main workflow through endpoints including:
 
-**### \`GET /\`**
-
+### `GET /`
 Checks that the API is running.
 
-**### \`POST /analyze\`**
-
+### `POST /analyze`
 Accepts an uploaded dataset and returns:
 
-\-   Dataset profile
+-   Dataset profile
 
-\-   Quality issues
+-   Quality issues
 
-\-   AI cleaning proposal
+-   AI cleaning proposal
 
-**### \`POST /approve\`**
-
+### `POST /approve`
 Accepts the user's recommendation decisions and converts them into a
 
 deterministic cleaning request.
 
-**### \`POST /execute-cleaning\`**
-
+### `POST /execute-cleaning`
 Executes the approved cleaning request and generates the cleaned dataset
 
 and report.
 
-**### \`GET /download/{filename}\`**
-
+### `GET /download/{filename}`
 Downloads a generated cleaned CSV file.
 
-**------------------------------------------------------------------------**
+---
 
-**## Running the Project Locally**
-
-**### 1. Clone the repository**
-
-\`\`\` bash
+## Running the Project Locally
+### 1. Clone the repository
+``` bash
 
 git clone https://github.com/gupta-krishna13/AI-Powered-Data-Cleaner.git
 
 cd AI-Powered-Data-Cleaner
 
-\`\`\`
+```
 
-**### 2. Create and activate a virtual environment**
-
+### 2. Create and activate a virtual environment
 Windows:
 
-\`\`\` bash
+``` bash
 
 python -m venv ai_data_cleaner_env
 
 ai_data_cleaner_env\Scripts\activate
 
-\`\`\`
+```
 
-**### 3. Install dependencies**
-
-\`\`\` bash
+### 3. Install dependencies
+``` bash
 
 pip install -r requirements.txt
 
-\`\`\`
+```
 
-**### 4. Configure environment variables**
+### 4. Configure environment variables
+Create a `.env` file in the project root:
 
-Create a \`.env\` file in the project root:
-
-\`\`\` env
+``` env
 
 APP_ENV=development
 
@@ -720,55 +692,52 @@ GEMINI_MODEL=your_primary_model
 
 GEMINI_FALLBACK_MODEL=your_fallback_model
 
-\`\`\`
+```
 
-Never commit the \`.env\` file or expose the API key publicly.
+Never commit the `.env` file or expose the API key publicly.
 
-**### 5. Start the FastAPI backend**
-
+### 5. Start the FastAPI backend
 From the project root:
 
-\`\`\` bash
+``` bash
 
-uvicorn backend.main\:app --reload
+uvicorn backend.main:app --reload
 
-\`\`\`
+```
 
 The backend will run locally on:
 
-\`\`\` text
+``` text
 
 http\://127.0.0.1:8000
 
-\`\`\`
+```
 
-**### 6. Start the Streamlit frontend**
-
+### 6. Start the Streamlit frontend
 Open another terminal, activate the same virtual environment, and run:
 
-\`\`\` bash
+``` bash
 
 streamlit run frontend/app.py
 
-\`\`\`
+```
 
 The Streamlit application will display its local URL in the terminal.
 
-**------------------------------------------------------------------------**
+---
 
-**## Testing**
-
+## Testing
 The project includes automated tests covering major parts of the
 
 recommendation and approval workflow.
 
 Run:
 
-\`\`\` bash
+``` bash
 
 pytest
 
-\`\`\`
+```
 
 The Gemini integration test is intentionally separated from the normal
 
@@ -780,75 +749,73 @@ To explicitly run the Gemini integration test:
 
 Windows CMD:
 
-\`\`\` cmd
+``` cmd
 
 set RUN_GEMINI_TEST=1
 
 pytest tests/test_gemini_proposal.py
 
-\`\`\`
+```
 
 Do not enable the integration test unnecessarily during normal
 
 development.
 
-**------------------------------------------------------------------------**
+---
 
-**## Security and Validation**
-
+## Security and Validation
 Several safeguards are implemented in the current version:
 
-\-   Uploaded files receive UUID-based backend filenames.
+-   Uploaded files receive UUID-based backend filenames.
 
-\-   Approval requests validate the supplied raw-data filename.
+-   Approval requests validate the supplied raw-data filename.
 
-\-   Download filenames are validated against path traversal.
+-   Download filenames are validated against path traversal.
 
-\-   Download paths are resolved and checked to remain inside the
+-   Download paths are resolved and checked to remain inside the
 
     processed-data directory.
 
-\-   Cleaning operations are restricted to supported operations.
+-   Cleaning operations are restricted to supported operations.
 
-\-   Recommendation columns are validated against the uploaded dataset.
+-   Recommendation columns are validated against the uploaded dataset.
 
-\-   Operation/column compatibility is validated before execution.
+-   Operation/column compatibility is validated before execution.
 
-\-   Every recommendation must receive exactly one valid decision before
+-   Every recommendation must receive exactly one valid decision before
 
     approval.
 
-\-   AI-generated proposals are validated before being used.
+-   AI-generated proposals are validated before being used.
 
-\-   API keys are stored through environment variables rather than source
+-   API keys are stored through environment variables rather than source
 
     code.
 
-**------------------------------------------------------------------------**
+---
 
-**## Error Handling**
-
+## Error Handling
 The application handles common failure scenarios such as:
 
-\-   Missing or invalid files
+-   Missing or invalid files
 
-\-   Unsupported file types
+-   Unsupported file types
 
-\-   Empty files
+-   Empty files
 
-\-   Malformed CSV input
+-   Malformed CSV input
 
-\-   Backend connection failures
+-   Backend connection failures
 
-\-   Invalid recommendation decisions
+-   Invalid recommendation decisions
 
-\-   Incomplete approval requests
+-   Incomplete approval requests
 
-\-   Invalid cleaning operations
+-   Invalid cleaning operations
 
-\-   Missing columns
+-   Missing columns
 
-\-   Invalid download filenames
+-   Invalid download filenames
 
 The frontend also clears stale analysis state when an analysis request
 
@@ -856,142 +823,132 @@ fails, preventing results from a previous dataset from remaining visible
 
 after an error.
 
-**------------------------------------------------------------------------**
+---
 
-**## Testing Scenarios**
-
+## Testing Scenarios
 The project has been manually tested with scenarios including:
 
-\-   Clean datasets
+-   Clean datasets
 
-\-   Datasets containing missing values
+-   Datasets containing missing values
 
-\-   Duplicate rows
+-   Duplicate rows
 
-\-   Outliers
+-   Outliers
 
-\-   Inconsistent categories
+-   Inconsistent categories
 
-\-   Multiple simultaneous data-quality issues
+-   Multiple simultaneous data-quality issues
 
-\-   Multiple affected columns
+-   Multiple affected columns
 
-\-   Recommendation approval/rejection
+-   Recommendation approval/rejection
 
-\-   Keep/remove decisions
+-   Keep/remove decisions
 
-\-   Incomplete approval decisions
+-   Incomplete approval decisions
 
-\-   Large recommendation sets
+-   Large recommendation sets
 
-\-   Malformed CSV files
+-   Malformed CSV files
 
-\-   Empty CSV files
+-   Empty CSV files
 
-\-   One-column datasets
+-   One-column datasets
 
-\-   Datasets with unusual column names
+-   Datasets with unusual column names
 
-\-   Backend unavailable scenarios
+-   Backend unavailable scenarios
 
-\-   Download and path-validation behavior
+-   Download and path-validation behavior
 
-**------------------------------------------------------------------------**
+---
 
-**## Design Principles**
-
-**### 1. Detection is not cleaning**
-
+## Design Principles
+### 1. Detection is not cleaning
 Finding an issue does not automatically mean that the system should
 
 modify the data.
 
-**### 2. AI recommends, deterministic code executes**
-
+### 2. AI recommends, deterministic code executes
 The AI proposes an action. The Python cleaning engine performs the
 
 actual transformation.
 
-**### 3. Human approval before modification**
-
+### 3. Human approval before modification
 The user remains in control of every recommendation.
 
-**### 4. Structured communication**
-
+### 4. Structured communication
 AI output is converted into a validated proposal schema instead of being
 
 treated as arbitrary executable code.
 
-**### 5. Auditable cleaning**
-
+### 5. Auditable cleaning
 The system records what happened during cleaning so the user can inspect
 
 the result.
 
-**------------------------------------------------------------------------**
+---
 
-**## Current Limitations**
-
+## Current Limitations
 This is currently a Version 1 application.
 
 Some production-level features are intentionally outside the current
 
 scope, including:
 
-\-   User authentication and accounts
+-   User authentication and accounts
 
-\-   Persistent analysis history
+-   Persistent analysis history
 
-\-   Production database-backed job storage
+-   Production database-backed job storage
 
-\-   Advanced file-size/content security limits
+-   Advanced file-size/content security limits
 
-\-   Production deployment configuration
+-   Production deployment configuration
 
-\-   Advanced dataset lineage and version management
+-   Advanced dataset lineage and version management
 
-\-   Large-scale distributed processing
+-   Large-scale distributed processing
 
 These can be considered in later versions.
 
-**------------------------------------------------------------------------**
+---
 
-**## Future Improvements**
-
+## Future Improvements
 Possible future development includes:
 
-\-   User authentication
+-   User authentication
 
-\-   Persistent cleaning history
+-   Persistent cleaning history
 
-\-   Database-backed job management
+-   Database-backed job management
 
-\-   More data-quality detectors
+-   More data-quality detectors
 
-\-   Additional cleaning strategies
+-   Additional cleaning strategies
 
-\-   Better dataset visualization
+-   Better dataset visualization
 
-\-   More advanced anomaly detection
+-   More advanced anomaly detection
 
-\-   Background processing for large datasets
+-   Background processing for large datasets
 
-\-   Cloud deployment
+-   Cloud deployment
 
-\-   Production-grade file storage
+-   Production-grade file storage
 
-\-   Dataset versioning
+-   Dataset versioning
 
-\-   Exportable cleaning reports
+-   Exportable cleaning reports
 
-\-   More configurable AI models
+-   More configurable AI models
 
-\-   Improved monitoring and observability
+-   Improved monitoring and observability
 
-**------------------------------------------------------------------------**
+---
 
-**## Project Philosophy**
-
+## Project Philosophy
 The goal of this project is not simply to build an AI that automatically
 
 changes a dataset.
@@ -1004,7 +961,7 @@ cleaning decisions\*\*, while deterministic code performs the approved
 
 transformations.
 
-\`\`\` text
+``` text
 
 AI Analysis
 
@@ -1024,17 +981,16 @@ Deterministic Execution
 
 Auditable Result
 
-\`\`\`
+```
 
 This makes the system easier to understand, test, and control than an
 
 approach where an AI model directly modifies user data.
 
-**------------------------------------------------------------------------**
+---
 
-**## Status**
-
-**\*\*Version 1 --- Local prototype / development release\*\***
+## Status
+**Version 1 --- Local prototype / development release**
 
 Core ingestion, profiling, quality detection, AI recommendation, human
 
@@ -1046,11 +1002,10 @@ Deployment and final repository cleanup are planned as the next stages
 
 of the project.
 
-**------------------------------------------------------------------------**
+---
 
-**## Author**
-
-**\*\*Krishna Gupta\*\***
+## Author
+**Krishna Gupta**
 
 Built as a project exploring AI-assisted data analysis, data quality,
 
