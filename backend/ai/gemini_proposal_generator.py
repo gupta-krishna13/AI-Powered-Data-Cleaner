@@ -66,16 +66,6 @@ def _generate_with_model(
                 ),
             }
 
-            # Gemini 3.8 Flash supports low/medium/high
-            # thinking. Low is appropriate for this fast
-            # data-quality analysis workflow.
-            if model == GEMINI_MODEL:
-                config_kwargs["thinking_config"] = (
-                    types.ThinkingConfig(
-                        thinking_level="low"
-                    )
-                )
-
             response = client.models.generate_content(
                 model=model,
                 contents=prompt,

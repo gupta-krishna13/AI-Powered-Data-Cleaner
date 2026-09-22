@@ -1,0 +1,16 @@
+name,age,city,salary,department,experience,gender,score
+Aarav,22.0,Delhi,30000.0,IT,1,Male,72
+Bhavya,24.0,delhi,32000.0,HR,2,Female,75
+Charu,25.0,Mumbai,34000.0,Sales,2,Female,78
+Dev,27.0,Mumbai,36000.0,IT,3,Male,80
+Esha,28.0,Pune,38000.0,HR,3,Female,82
+Farhan,30.0,Pune,40000.0,Sales,4,Male,79
+Gauri,,Delhi,42000.0,IT,4,Female,81
+Harsh,200.0,Noida,44000.0,HR,5,Male,77
+Isha,36.0,Noida,46000.0,Sales,5,Female,83
+Jay,38.0,Kolkata,,IT,6,Male,76
+Kavya,40.0,Kolkata,50000.0,HR,6,Female,84
+Laksh,42.0,,52000.0,Sales,7,Male,80
+Meera,45.0,Jaipur,54000.0,IT,7,Female,85
+Nikhil,50.0,Delhi,56000.0,HR,8,Male,74
+Nikhil,50.0,Delhi,56000.0,HR,8,Male,74

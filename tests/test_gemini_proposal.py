@@ -26,7 +26,7 @@ def test_gemini_proposal_integration():
     # --------------------------------------------------
 
     df = load_file(
-        "data/raw/messy_data.csv"
+        "tests/fixtures/messy_data.csv"
     )
 
     assert len(df) == 10

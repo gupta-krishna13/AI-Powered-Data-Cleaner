@@ -10,7 +10,7 @@ from backend.ai.proposal_generator import (
 
 
 DATASET_PATH = Path(
-    "data/raw/messy_test_dataset_2.csv"
+    "tests/fixtures/messy_test_dataset_2.csv"
 )
 
 

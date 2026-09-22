@@ -43,7 +43,7 @@ from backend.cleaning.report import (
 
 
 DATASET_PATH = Path(
-    "data/raw/messy_data.csv"
+    "tests/fixtures/messy_data.csv"
 )
 
 
