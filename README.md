@@ -480,64 +480,34 @@ AI POWERED DATA CLEANING/
 ---
 
 ## Technology Stack
-  Component                    Technology
 
-**  ---------------------------- ---------------**
-
-  Programming Language         Python
-
-  Data Processing              Pandas, NumPy
-
-  Backend                      FastAPI
-
-  Frontend                     Streamlit
-
-  AI                           Google Gemini
-
-  Validation                   Pydantic
-
-  Machine Learning Utilities   Scikit-learn
-
-  Excel Processing             OpenPyXL
-
-  Environment Variables        python-dotenv
-
-  Testing                      Pytest
-
-  API Server                   Uvicorn
+| Component | Technology |
+|---|---|
+| Programming Language | Python |
+| Data Processing | Pandas, NumPy |
+| Backend | FastAPI |
+| Frontend | Streamlit |
+| AI | Google Gemini |
+| Validation | Pydantic |
+| Machine Learning Utilities | Scikit-learn |
+| Excel Processing | OpenPyXL |
+| Environment Variables | python-dotenv |
+| Testing | Pytest |
+| API Server | Uvicorn |
 
 ---
 
 ## Supported Cleaning Operations
-**  -----------------------------------------------------------------------**
 
-  Operation                           Purpose
+| Operation | Purpose |
+|---|---|
+| Median Imputation | Fill missing numerical values using the column median |
+| Mode Imputation | Fill missing categorical values using the column mode |
+| Standardization | Normalize inconsistent categorical formatting |
+| Outlier Removal | Remove rows containing IQR-based outlier values |
+| Duplicate Removal | Remove exact duplicate rows |
 
-**  ----------------------------------- -----------------------------------**
-
-  Median Imputation                   Fill missing numerical values using
-
-                                      the column median
-
-  Mode Imputation                     Fill missing categorical values
-
-                                      using the column mode
-
-  Standardization                     Normalize inconsistent categorical
-
-                                      formatting
-
-  Outlier Removal                     Remove rows containing IQR-based
-
-                                      outlier values
-
-  Duplicate Removal                   Remove exact duplicate rows
-
-  -----------------------------------------------------------------------
-
-The application validates the requested operation and its column
-
-compatibility before execution.
+The application validates the requested operation and its column compatibility before execution.
 
 ---
 
@@ -990,17 +960,16 @@ approach where an AI model directly modifies user data.
 ---
 
 ## Status
-**Version 1 --- Local prototype / development release**
+
+**Version 1 --- Deployment preparation / development release**
 
 Core ingestion, profiling, quality detection, AI recommendation, human
-
 approval, deterministic cleaning, reporting, frontend workflow,
+validation, automated testing, and GitHub repository setup are implemented.
 
-validation, and automated testing are implemented.
-
-Deployment and final repository cleanup are planned as the next stages
-
-of the project.
+The project is currently being prepared for cloud deployment. Deployment
+configuration for the FastAPI backend and Streamlit frontend is included
+in the repository.
 
 ---
 
