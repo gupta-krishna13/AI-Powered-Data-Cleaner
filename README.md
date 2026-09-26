@@ -965,15 +965,18 @@ approach where an AI model directly modifies user data.
 
 ## Status
 
-**Version 1 --- Deployment preparation / development release**
+**Version 1 — Deployed**
 
 Core ingestion, profiling, quality detection, AI recommendation, human
 approval, deterministic cleaning, reporting, frontend workflow,
-validation, automated testing, and GitHub repository setup are implemented.
+validation, automated testing, and deployment are implemented.
 
-The project is currently being prepared for cloud deployment. Deployment
-configuration for the FastAPI backend and Streamlit frontend is included
-in the repository.
+The FastAPI backend is deployed on Render and the Streamlit frontend is
+deployed on Streamlit Community Cloud.
+
+### Live Demo
+
+[**Try the AI Data Cleaner →**](https://ai-data-cleaner.streamlit.app/)
 
 ---
 
