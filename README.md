@@ -7,6 +7,10 @@ lets the user approve or reject those recommendations before any
 
 cleaning operation is executed.
 
+### 🚀 Live Demo
+
+[**Try the AI Data Cleaner →**](https://ai-data-cleaner.streamlit.app/)
+
 The project is designed around a **human-in-the-loop** approach: AI
 
 provides analysis and recommendations, while the actual data
