@@ -9,7 +9,7 @@ cleaning operation is executed.
 
 ### 🚀 Live Demo
 
-[**Try the AI Data Cleaner →**](https://ai-data-cleaner.streamlit.app/)
+[**Try the AI Data Cleaner →**](https://ai-powered-data-cleaner.streamlit.app/)
 
 The project is designed around a **human-in-the-loop** approach: AI
 
@@ -976,7 +976,7 @@ deployed on Streamlit Community Cloud.
 
 ### Live Demo
 
-[**Try the AI Data Cleaner →**](https://ai-data-cleaner.streamlit.app/)
+[**Try the AI Data Cleaner →**](https://ai-powered-data-cleaner.streamlit.app/)
 
 ---
 
